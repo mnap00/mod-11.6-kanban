@@ -9,6 +9,28 @@ function randomString() {
 
 $(function() {
 
+    var board = {
+        name: 'Kanban Board',
+        addColumn: function(column) {
+            this.$element.append(column.$element);
+            initSortable();
+        },
+        $element: $('#board .column-container')
+    };
+
+    var $boardAddColumn = $('.create-column').click(function() {
+        var name = prompt('Enter a column name');
+        var column = new Column(name);
+        board.addColumn(column);
+    });
+
+    function initSortable() {
+        $('.column-card-list').sortable({
+            connectWith: '.column-card-list',
+            placeholder: 'card-placeholder'
+        }).disableSelection();
+    }
+
     function Column(name) {
         var self = this;
         this.id = randomString();
@@ -69,7 +91,4 @@ $(function() {
     };
 
 });
-
-
-
 
