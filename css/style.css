@@ -1,0 +1,33 @@
+.board::after { clear: both; content: ' '; display: block; }
+
+.add-card, .create-column, .btn-delete, .column-card-list .card { overflow: hidden; text-overflow: ellipsis; }
+
+.add-card, .create-column, .btn-delete, body, .column-card-list { border: 0; margin: 0; padding: 0; }
+
+.column-card-list .card, .card-placeholder { display: block; list-style-type: none; }
+
+.add-card, .create-column, .btn-delete { color: #f5f6fa; border-radius: 5px; cursor: pointer; height: 2em; line-height: 2em; margin: 6px 12px; }
+
+* { box-sizing: border-box; }
+
+body { color: #192a56; font-family: "Lato", sans-serif; }
+
+h2 { margin: 1% 0; }
+
+p { margin: 1% 0; }
+
+.board { padding: 12px; text-align: center; }
+
+.add-card, .create-column { background-color: #0097e6; padding: 0 12px; }
+
+.btn-delete { background-color: #c23616; bottom: 1%; position: absolute; right: 1%; width: 2em; }
+
+.column { background-color: #95a5a6; border-radius: 12px; -ms-flex: 1; flex: 1; margin: 0 1%; min-height: 320px; min-width: 96px; padding: 6px 6px 2.2em; position: relative; }
+
+.column-container { display: -ms-flexbox; display: flex; margin: 0 -12px; margin-top: 24px; }
+
+.column-card-list { min-height: 48px; }
+
+.column-card-list .card { background-color: #f5f6fa; border-radius: 12px; margin: 6px 0; padding: 6px 6px 2.2em; position: relative; text-align: left; }
+
+.card-placeholder { border: 1px dashed #192a56; border-radius: 12px; height: 96px; margin: 6px 0; }
