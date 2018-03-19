@@ -1,0 +1,125 @@
+$font-main: 'Lato', sans-serif;
+$color-add: #0097e6;
+$color-primary: #192a56;
+$color-remove: #c23616;
+$color-secondary: #f5f6fa;
+$color-tertiary: #95a5a6;
+
+$grey: #888;
+$white: #fff;
+
+%clearfix {
+    &::after {
+        clear: both;
+        content: ' ';
+        display: block;
+    }
+}
+
+%overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+%reset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+%reset-list {
+    display: block;
+    list-style-type: none;
+}
+
+%button {
+    @extend %overflow;
+    @extend %reset;
+    color: $color-secondary;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 2em;
+    line-height: 2em;
+    margin: 6px 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @extend %reset;
+    color: $color-primary;
+    font-family: $font-main;
+}
+
+h2 {
+    margin: 1% 0;
+}
+
+p {
+    margin: 1% 0;
+}
+
+.board {
+    @extend %clearfix;
+    padding: 12px;
+    text-align: center;
+}
+
+.add-card,
+.create-column {
+    @extend %button;
+    background-color: $color-add;
+    padding: 0 12px;
+}
+
+.btn-delete {
+    @extend %button;
+    background-color: $color-remove;
+    bottom: 1%;
+    position: absolute;
+    right: 1%;
+    width: 2em;
+}
+
+.column {
+    background-color: $color-tertiary;
+    border-radius: 12px;
+    flex: 1;
+    margin: 0 1%;
+    min-height: 320px;
+    min-width: 96px;
+    padding: 6px 6px 2.2em;
+    position: relative;
+}
+
+.column-container {
+    display: flex;
+    margin: 0 -12px;
+    margin-top: 24px;
+}
+
+.column-card-list {
+    @extend %reset;
+    min-height: 48px;
+
+    .card {
+        @extend %overflow;
+        @extend %reset-list;
+        background-color: $color-secondary;
+        border-radius: 12px;
+        margin: 6px 0;
+        padding: 6px 6px 2.2em;
+        position: relative;
+        text-align: left;
+    }
+}
+
+.card-placeholder {
+    @extend %reset-list;
+    border: 1px dashed $color-primary;
+    border-radius: 12px;
+    height: 96px;
+    margin: 6px 0;
+}
