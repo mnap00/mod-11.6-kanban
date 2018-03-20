@@ -104,4 +104,7 @@ $(function() {
     todoColumn.addCard(card1);
     doingColumn.addCard(card2);
 
+    console.log(card1.id);
+    console.log(todoColumn.id);
+
 });
